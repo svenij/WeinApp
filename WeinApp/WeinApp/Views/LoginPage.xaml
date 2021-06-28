@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WeinApp.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Label Text="Benutzername" FontAttributes="Bold" FontSize="20" TextColor="#96d1ff"/>
+            <Entry Placeholder="Geben Sie Ihren Benutzername ein" Text="{Binding UserName, Mode=TwoWay}" TextColor="#96d1ff"/>
+
+            <Label Text="Passwort" FontAttributes="Bold" FontSize="20" TextColor="#96d1ff"/>
+            <Entry Placeholder="Geben Sie Ihres Passwort ein" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" TextColor="#96d1ff"/>
+
+            <Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" Image="login32.png" BackgroundColor ="#96d1ff" Text="Login" Command="{Binding LoginCommand}"/>
+            <!--<Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" BackgroundColor ="#96d1ff" Text="Login Fingerprint" Command="{Binding Btn_Biometrie}" IsVisible="{Binding IsBiometricAuthAllowed}"/>-->
+            <Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" BackgroundColor ="#96d1ff" Text="Login Fingerprint" Clicked="Btn_Biometrie"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

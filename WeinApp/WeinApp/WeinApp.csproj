@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\WineDetailPage.xaml.cs">
+      <DependentUpon>WineDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewWinePage.xaml.cs">
+      <DependentUpon>NewWinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\WinesPage.xaml.cs">
+      <DependentUpon>WinesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

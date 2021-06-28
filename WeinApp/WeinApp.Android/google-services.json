@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "34718745621",
+    "project_id": "wine-e022c",
+    "storage_bucket": "wine-e022c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34718745621:android:044e69639d61b7669b7a1c",
+        "android_client_info": {
+          "package_name": "com.companyname.weinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34718745621-2bam5ud32m8f37rgh8nsu86ioh309pet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAusiFbLcUWq2AFFIm7TOmvCZc6nbdCKK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34718745621-2bam5ud32m8f37rgh8nsu86ioh309pet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
