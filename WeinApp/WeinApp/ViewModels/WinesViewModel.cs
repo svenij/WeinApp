@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace WeinApp.ViewModels
 {
-    public class AlbumsViewModel : ListViewModelBase<Album, NewAlbumPage>
+    public class WinesViewModel : ListViewModelBase<Wine, NewWinePage>
     {
     }
 }

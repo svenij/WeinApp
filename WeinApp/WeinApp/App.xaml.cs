@@ -13,7 +13,7 @@ namespace WeinApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStoreOld>();
+            DependencyService.Register<WineMockDataStore>();
             MainPage = new AppShell();
         }
 

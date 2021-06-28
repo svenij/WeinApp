@@ -1,10 +1,10 @@
 ﻿using SimpleInjector;
 using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using WeinApp.Models;
 using WeinApp.Services;
+using JetBrains.Annotations;
+using SimpleInjector;
 
 
 namespace WeinApp.Core
@@ -23,7 +23,7 @@ namespace WeinApp.Core
             }.RegisterAlbumServices();
         }
 
-        public static Container RegisterAlbumServices([NotNull] this Container container)
+        public static Container RegisterAlbumServices([JetBrains.Annotations.NotNull] this Container container)
         {
             if (container is null) { throw new ArgumentNullException(nameof(container)); }
 

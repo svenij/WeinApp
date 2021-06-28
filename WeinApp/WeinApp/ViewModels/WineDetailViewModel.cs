@@ -11,7 +11,7 @@ namespace WeinApp.ViewModels
         public WineDetailViewModel(Wine wine = null)
         {
             Title = wine?.Title;
-            Album = wine;
+            Wine = wine;
         }
 
         public Wine Wine { get; set; }
