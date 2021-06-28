@@ -1,9 +1,11 @@
-﻿using SQLite;
+﻿using SimpleInjector;
+using SQLite;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
+using WeinApp.Models;
 using WeinApp.Services;
+
 
 namespace WeinApp.Core
 {
@@ -25,9 +27,9 @@ namespace WeinApp.Core
         {
             if (container is null) { throw new ArgumentNullException(nameof(container)); }
 
-            container.RegisterSingleton<IDataStore<Album>, SQLiteDataStore<Album>>();
+            container.RegisterSingleton<IDataStore<Wine>, SQLiteDataStore<Wine>>();
             container.RegisterSingleton<IDialogService, DialogService>();
-            container.RegisterSingleton<IAlbumSaver, AlbumSaver>();
+            container.RegisterSingleton<IWineSaver, WineSaver>();
 
             return container;
         }
