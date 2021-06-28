@@ -14,40 +14,40 @@ namespace WeinApp.Services
         {
             return Task.CompletedTask;
         }
-        protected List<T> Items { get; set; }
+        protected List<T> Wines { get; set; }
 
         public async Task<bool> AddWineAsync(T wine)
         {
-            Items.Add(wine);
+            Wines.Add(wine);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> UpdateWineAsync(T wine)
         {
-            var oldWine = Items.FirstOrDefault(arg => arg.Id == wine.Id);
-            Items.Remove(oldWine);
-            Items.Add(wine);
+            var oldWine = Wines.FirstOrDefault(arg => arg.Id == wine.Id);
+            Wines.Remove(oldWine);
+            Wines.Add(wine);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteWineAsync(string id)
         {
-            var oldWine = Items.FirstOrDefault(arg => arg.Id == id);
-            Items.Remove(oldWine);
+            var oldWine = Wines.FirstOrDefault(arg => arg.Id == id);
+            Wines.Remove(oldWine);
 
             return await Task.FromResult(true);
         }
 
         public async Task<T> GetWineAsync(string id)
         {
-            return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(Wines.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<T>> GetWinesAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(Items);
+            return await Task.FromResult(Wines);
         }
     }
 }
