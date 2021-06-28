@@ -20,50 +20,40 @@ namespace WeinApp.Services
             // Check whether our table already exists. If not, we're creating it here.
             if (_connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
             {
-               await _connection.CreateTable<T>();
+               await _connection.CreateTableAsync<T>();
             }
         }
 
-        public Task<bool> AddWineAsync(T item)
+        public async Task<bool> AddWineAsync(T wine)
         {
-            var itemInsertedCount = Connection.Insert(item);
-
-            return Task.FromResult(itemInsertedCount == 1);
+            return await _connection.InsertAsync(wine) ==1;
         }
 
-        public Task<bool> DeleteWineAsync(string id)
+        public async Task<bool> DeleteWineAsync(string id)
         {
-            var itemDeletedCount = Connection.Delete<T>(id);
-
-            return Task.FromResult(itemDeletedCount == 1);
+            return await _connection.DeleteAsync<T>(id) == 1;
         }
 
         public Task<T> GetWineAsync(string id)
         {
-            var result = Connection.Get<T>(id);
-
-            return Task.FromResult(result);
+            return _connection.GetAsync<T>(id);
         }
 
-        public Task<IEnumerable<T>> GetWinesAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<T>> GetWinesAsync(bool forceRefresh = false)
         {
-            IEnumerable<T> allItems = Connection.Table<T>().ToList();
-
-            return Task.FromResult(allItems);
+            return await _connection.Table<T>().ToListAsync();
         }
 
-        public Task<bool> UpdateWineAsync(T item)
+        public async Task<bool> UpdateWineAsync(T wine)
         {
-            var itemUpdatedCount = Connection.Update(item);
-
-            return Task.FromResult(itemUpdatedCount == 1);
+            return await _connection.UpdateAsync(wine) == 1;
         }
 
-        protected SQLiteConnection Connection { get; }
+        protected SQLiteAsyncConnection _connection { get; }
 
         /// <summary>
         /// Gets the static path to the database. The <see cref="Environment.SpecialFolder"/> is used to resolve the right path.
         /// </summary>
-        private static string DatabasePath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Albums.db3");
+        private static string DatabasePath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Wines.db3");
     }
 }
