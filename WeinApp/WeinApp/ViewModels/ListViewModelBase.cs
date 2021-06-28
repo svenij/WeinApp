@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace WeinApp.ViewModels
 {
-    public class ListViewModelBase<TWine,TPage> : WineViewModelBase<TWine>
+    public class ListViewModelBase<TWine, TPage> : WineViewModelBase<TWine>
     where TPage : class
     {
         public ObservableCollection<TWine> Items { get; set; }

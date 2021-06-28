@@ -47,7 +47,6 @@ namespace WeinApp.ViewModels
         }
         public ICommand SubmitCommand { protected set; get; }
 
-        
         public void OnSubmit()
         {
             if (email != "user" || password != "user")
