@@ -18,6 +18,6 @@ namespace WeinApp.Services
         new Wine { Title = "Fifth album", Description = "This is an album description." },
         new Wine { Title = "Sixth album", Description = "This is an album description." }
       };
-    }
+        }
     }
 }
