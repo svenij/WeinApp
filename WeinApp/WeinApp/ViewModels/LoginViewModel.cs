@@ -24,7 +24,6 @@ namespace WeinApp.ViewModels
             await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
         }
         public Action DisplayInvalidLoginPrompt;
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
         private string email;
         public string Email
         {
