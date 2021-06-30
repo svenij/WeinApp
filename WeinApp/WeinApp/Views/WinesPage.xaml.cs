@@ -14,8 +14,6 @@ namespace WeinApp.Views
 {
     public partial class WinesPage : ContentPage
     {
-        WinesViewModel _viewModel;
-
         public WinesPage()
         {
             InitializeComponent();
@@ -23,10 +21,28 @@ namespace WeinApp.Views
             BindingContext = _viewModel = new WinesViewModel();
         }
 
+        private async void OnAlbumSelected(object sender, EventArgs args)
+        {
+            var layout = (BindableObject)sender;
+            var album = (Wine)layout.BindingContext;
+            //await Navigation.PushAsync(new WineDetailPage(new WineDetailViewModel(wine)));
+        }
+
+        private async void AddAlbumClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewWinePage()));
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.OnAppearing();
+
+            if (_viewModel.Items.Count == 0)
+            {
+                _viewModel.IsBusy = true;
+            }
         }
+
+        private readonly WinesViewModel _viewModel;
     }
 }

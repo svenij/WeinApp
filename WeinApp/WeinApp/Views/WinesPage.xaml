@@ -14,31 +14,27 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:WinesViewModel" Command="{Binding LoadWinesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView x:Name="WinesListView"
-                ItemsSource="{Binding Wines}"
-                SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Wine">
-                        <Label Text="{Binding WineName}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                        <Label Text="{Binding Vintage}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+        <CollectionView x:Name="WinesCollectionView"
+                ItemsSource="{Binding Wines}">
+            <CollectionView.WineTemplate>
+                <DataTemplate x:DataType="vm:Models.Wine">
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Title}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                        <Label Text="{Binding Description}"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:WinesViewModel}}, Path=WineTapped}"		
-                                CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnAlbumSelected"></TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
+            </CollectionView.WineTemplate>
         </CollectionView>
     </RefreshView>
 </ContentPage>
+

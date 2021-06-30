@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using WeinApp.Models;
+using WeinApp.Services;
 using WeinApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,12 +11,32 @@ namespace WeinApp.Views
 {
     public partial class NewWinePage : ContentPage
     {
-        public Wine Item { get; set; }
+        public Wine Wine { get; set; }
 
         public NewWinePage()
         {
             InitializeComponent();
-            BindingContext = new NewWineViewModel();
+
+            _wineSaver = App.Services.GetInstance<IWineSaver>();
+            Wine = new Wine();
+
+            BindingContext = this;
         }
+
+        private async void Save_Clicked(object sender, EventArgs e)
+        {
+            if (await _wineSaver.TrySaveAsync(Wine))
+            {
+                MessagingCenter.Send(this, "AddItem", Wine);
+                await Navigation.PopModalAsync();
+            }
+        }
+
+        private async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+        private readonly IWineSaver _wineSaver;
     }
 }

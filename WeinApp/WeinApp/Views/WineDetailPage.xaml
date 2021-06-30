@@ -6,13 +6,13 @@
 
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Name:" FontSize="Medium" />
-        <Label Text="{Binding WineName}" FontSize="Small"/>
+        <Label Text="{Binding Wine.WineName}" FontSize="Small"/>
         <Label Text="Jahrgang:" FontSize="Medium" />
-        <Label Text="{Binding Vintage}" FontSize="Small"/>
+        <Label Text="{Binding Wine.Vintage}" FontSize="Small"/>
         <Label Text="Herkunft:" FontSize="Medium" />
-        <Label Text="{Binding Origin}" FontSize="Small"/>
+        <Label Text="{Binding Wine.Origin}" FontSize="Small"/>
         <Label Text="Typ:" FontSize="Medium" />
-        <Label Text="{Binding Type}" FontSize="Small"/>
+        <Label Text="{Binding Wine.Type}" FontSize="Small"/>
     </StackLayout>
     
 </ContentPage>

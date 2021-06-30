@@ -1,10 +1,7 @@
 ﻿using SimpleInjector;
-using SQLite;
 using System;
 using WeinApp.Models;
 using WeinApp.Services;
-using JetBrains.Annotations;
-using SimpleInjector;
 
 
 namespace WeinApp.Core
