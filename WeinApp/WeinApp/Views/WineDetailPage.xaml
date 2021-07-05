@@ -6,13 +6,18 @@
 
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Name:" FontSize="Medium" />
-        <Label Text="{Binding Wine.WineName}" FontSize="Small"/>
-        <Label Text="Jahrgang:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Vintage}" FontSize="Small"/>
-        <Label Text="Herkunft:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Origin}" FontSize="Small"/>
+        <Label Text="{Binding Wine.Name}" FontSize="Small"/>
         <Label Text="Typ:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Type}" FontSize="Small"/>
+        <Label Text="{Binding Wine.Typ}" FontSize="Small"/>
+        <Label Text="Jahrgang:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Jahrgang}" FontSize="Small"/>
+        <Label Text="Land:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Land}" FontSize="Small"/>
+        <Label Text="Region:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Region}" FontSize="Small"/>
+        <Label Text="Traubensorte:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Traubensorte}" FontSize="Small"/>
+        <Label Text="Flaschengrösse:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Flaschengroesse}" FontSize="Small"/>
     </StackLayout>
-    
 </ContentPage>

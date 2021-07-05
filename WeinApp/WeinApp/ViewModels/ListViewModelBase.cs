@@ -11,19 +11,19 @@ namespace WeinApp.ViewModels
     public class ListViewModelBase<TWine, TPage> : WineViewModelBase<TWine>
     where TPage : class
     {
-        public ObservableCollection<TWine> Items { get; set; }
+        public ObservableCollection<TWine> Wines { get; set; }
 
         public Command LoadItemsCommand { get; set; }
 
         public ListViewModelBase()
         {
             Title = "Browse";
-            Items = new ObservableCollection<TWine>();
+            Wines = new ObservableCollection<TWine>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             MessagingCenter.Subscribe<TPage, TWine>(this, "AddWine", async (obj, item) =>
             {
-                Items.Add(item);
+                Wines.Add(item);
                 await DataStore.AddWineAsync(item);
             });
         }
@@ -34,11 +34,11 @@ namespace WeinApp.ViewModels
 
             try
             {
-                Items.Clear();
+                Wines.Clear();
                 var items = await DataStore.GetWinesAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Wines.Add(item);
                 }
             }
             catch (Exception ex)

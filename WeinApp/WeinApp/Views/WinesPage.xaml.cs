@@ -37,7 +37,7 @@ namespace WeinApp.Views
         {
             base.OnAppearing();
 
-            if (_viewModel.Items.Count == 0)
+            if (_viewModel.Wines.Count == 0)
             {
                 _viewModel.IsBusy = true;
             }
