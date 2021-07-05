@@ -23,11 +23,11 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                        <!--<Label Text="{Binding Weinname}"
+                        <Label Text="{Binding Typ}"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />-->
-                        
+                                FontSize="13" />
+
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnWineSelected"></TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>

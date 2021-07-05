@@ -36,7 +36,7 @@
                 <Label Text="Traubensorte" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Traubensorte}" FontSize="Small" Margin="0" Placeholder="Traubensorte" />
 
-                <Label Text="Flaschengroesse" FontSize="Medium" />
+                <Label Text="Flaschengrösse" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />
             </StackLayout>
         </ScrollView>
