@@ -1,10 +1,5 @@
 ﻿using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WeinApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -39,8 +34,6 @@ namespace WeinApp.Views
                 await DisplayAlert("Yes!", "Zugriff zugelassen", "Weiter");
                 await Shell.Current.GoToAsync("//AboutPage");
             }
-
         }
-
     }
 }
