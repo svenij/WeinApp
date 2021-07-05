@@ -17,14 +17,14 @@ namespace WeinApp.Services
         {
             if (wine is null) { throw new ArgumentNullException(nameof(wine)); }
 
-            if (string.IsNullOrEmpty(wine.Title))
+            if (string.IsNullOrEmpty(wine.Name))
             {
                 await _dialogService.Show("Validation failed", "The title cannot be empty.");
 
                 return false;
             }
 
-            if (string.IsNullOrEmpty(wine.Description))
+            if (string.IsNullOrEmpty(wine.Typ))
             {
                 await _dialogService.Show("Validation failed", "The description cannot be empty.");
 

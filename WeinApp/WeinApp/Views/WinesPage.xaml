@@ -17,8 +17,8 @@
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
         <CollectionView x:Name="WinesCollectionView"
                 ItemsSource="{Binding Wines}">
-            <CollectionView.WineTemplate>
-                <DataTemplate x:DataType="vm:Models.Wine">
+            <!--<CollectionView.WineTemplate>
+                <DataTemplate x:DataType="Models.Wine">
                     <StackLayout Padding="10">
                         <Label Text="{Binding Title}" 
                                 LineBreakMode="NoWrap" 
@@ -33,7 +33,7 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>
-            </CollectionView.WineTemplate>
+            </CollectionView.WineTemplate>-->
         </CollectionView>
     </RefreshView>
 </ContentPage>

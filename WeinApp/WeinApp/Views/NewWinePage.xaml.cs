@@ -17,7 +17,7 @@ namespace WeinApp.Views
         {
             InitializeComponent();
 
-            _wineSaver = App.Services.GetInstance<IWineSaver>();
+            _wineSaver = DependencyService.Get<IWineSaver>();
             Wine = new Wine();
 
             BindingContext = this;

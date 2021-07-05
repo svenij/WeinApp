@@ -10,7 +10,7 @@ namespace WeinApp.ViewModels
     {
         public WineDetailViewModel(Wine wine = null)
         {
-            Title = wine?.Title;
+            Title = wine?.Name;
             Wine = wine;
         }
 

@@ -52,7 +52,7 @@ namespace WeinApp.ViewModels
 
         private void Show(string title, string message)
         {
-            App.Services.GetInstance<IDialogService>().Show(title, message);
+           DependencyService.Get<IDialogService>().Show(title, message);
         }
 
         private string _textToEncrypt;

@@ -11,12 +11,12 @@ namespace WeinApp.Services
         {
             Wines = new List<Wine>()
       {
-        new Wine { Title = "First album", Description = "This is an album description." },
-        new Wine { Title = "Second album", Description = "This is an album description." },
-        new Wine { Title = "Third album", Description = "This is an album description." },
-        new Wine { Title = "Fourth album", Description = "This is an album description." },
-        new Wine { Title = "Fifth album", Description = "This is an album description." },
-        new Wine { Title = "Sixth album", Description = "This is an album description." }
+        new Wine { Name = "First album", Typ = "This is an album description." },
+        new Wine { Name = "Second album", Typ = "This is an album description." },
+        new Wine { Name = "Third album", Typ = "This is an album description." },
+        new Wine { Name = "Fourth album", Typ = "This is an album description." },
+        new Wine { Name = "Fifth album", Typ = "This is an album description." },
+        new Wine { Name = "Sixth album", Typ = "This is an album description." }
       };
         }
     }

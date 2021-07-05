@@ -6,25 +6,25 @@ using WeinApp.Models;
 
 namespace WeinApp.Views
 {
-    public partial class AlbumDetailPage : ContentPage
+    public partial class WineDetailPage : ContentPage
     {
         private readonly WineDetailViewModel _viewModel;
 
-        public AlbumDetailPage(WineDetailViewModel viewModel)
+        public WineDetailPage(WineDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = _viewModel = viewModel;
         }
 
-        public AlbumDetailPage()
+        public WineDetailPage()
         {
             InitializeComponent();
 
             var wine = new Wine
             {
-                Title = "Album 1",
-                Description = "This is an Album description."
+                Name = "Album 1",
+                Typ = "This is an Album description."
             };
 
             _viewModel = new WineDetailViewModel(wine);
