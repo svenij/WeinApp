@@ -1,8 +1,6 @@
-﻿using System;
+﻿using GenFu.ValueGenerators.Music;
 using WeinApp.Services;
-using WeinApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WeinApp
 {
@@ -13,7 +11,10 @@ namespace WeinApp
         {
             InitializeComponent();
 
-            DependencyService.Register<WineMockDataStore>();
+            //DependencyService.Register<WineMockDataStore>();
+            var dataStore = Services.GetInstance<IDataStore<Album>>();
+            dataStore.Initialize();
+
             MainPage = new AppShell();
         }
 

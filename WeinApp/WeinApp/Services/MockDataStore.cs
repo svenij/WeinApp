@@ -8,13 +8,12 @@ using WeinApp.Models;
 namespace WeinApp.Services
 {
     public class MockDataStore<T> : IDataStore<T>
-     where T : UniqueItem
+    where T : UniqueItem
     {
         public Task Initialize()
         {
             return Task.CompletedTask;
         }
-        protected List<T> Wines { get; set; }
 
         public async Task<bool> AddWineAsync(T wine)
         {
@@ -25,8 +24,8 @@ namespace WeinApp.Services
 
         public async Task<bool> UpdateWineAsync(T wine)
         {
-            var oldWine = Wines.FirstOrDefault(arg => arg.Id == wine.Id);
-            Wines.Remove(oldWine);
+            var oldwine = Wines.FirstOrDefault(arg => arg.Id == wine.Id);
+            Wines.Remove(oldwine);
             Wines.Add(wine);
 
             return await Task.FromResult(true);
@@ -34,8 +33,8 @@ namespace WeinApp.Services
 
         public async Task<bool> DeleteWineAsync(string id)
         {
-            var oldWine = Wines.FirstOrDefault(arg => arg.Id == id);
-            Wines.Remove(oldWine);
+            var oldwine = Wines.FirstOrDefault(arg => arg.Id == id);
+            Wines.Remove(oldwine);
 
             return await Task.FromResult(true);
         }
@@ -49,5 +48,6 @@ namespace WeinApp.Services
         {
             return await Task.FromResult(Wines);
         }
+        protected List<T> Wines { get; set; }
     }
 }

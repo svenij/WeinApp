@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeinApp.Views.WinesPage"
              xmlns:vm="clr-namespace:WeinApp"
-             Title="{Binding Weinname}"
+             Title="Mein Weinkeller"
              xmlns:local="clr-namespace:WeinApp.ViewModels"  
              xmlns:model="clr-namespace:WeinApp.Models"  
               x:DataType="vm:ViewModels.WinesViewModel"
