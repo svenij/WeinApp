@@ -84,6 +84,9 @@
     <FlyoutItem Title="Weinkeller" Icon="WineLogo.jpg">
         <ShellContent Route="WinesPage" ContentTemplate="{DataTemplate local:WinesPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="Neuer Wein erfassen" Icon="WineLogo.jpg">
+        <ShellContent Route="NewWinePage" ContentTemplate="{DataTemplate local:NewWinePage}" />
+    </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
