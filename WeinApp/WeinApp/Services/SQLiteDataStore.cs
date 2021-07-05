@@ -16,7 +16,7 @@ namespace WeinApp.Services
             var options = new SQLiteConnectionString(DatabasePath);
             Connection = new SQLiteAsyncConnection(options);
         }
-            public async Task Initialize()
+            public virtual async Task Initialize()
             {
                 // Check whether our table already exists. If not, we're creating it here.
                 if (Connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
@@ -50,7 +50,7 @@ namespace WeinApp.Services
             return await Connection.UpdateAsync(wine) == 1;
         }
 
-        private SQLiteAsyncConnection Connection;
+        protected SQLiteAsyncConnection Connection { get; private set; }
 
         /// <summary>
         /// Gets the static path to the database. The <see cref="Environment.SpecialFolder"/> is used to resolve the right path.

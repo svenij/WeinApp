@@ -1,4 +1,5 @@
-﻿using SimpleInjector;
+﻿using JetBrains.Annotations;
+using SimpleInjector;
 using System;
 using WeinApp.Models;
 using WeinApp.Services;
@@ -20,14 +21,14 @@ namespace WeinApp.Core
             }.RegisterWineServices();
         }
 
-        public static Container RegisterWineServices([JetBrains.Annotations.NotNull] this Container container)
+        public static Container RegisterWineServices([NotNull] this Container container)
         {
             if (container is null) { throw new ArgumentNullException(nameof(container)); }
 
             container.RegisterSingleton<IDataStore<Wine>, WineDataStore>();
             container.RegisterSingleton<IDialogService, DialogService>();
             container.RegisterSingleton<IWineSaver, WineSaver>();
-          
+
             return container;
         }
     }

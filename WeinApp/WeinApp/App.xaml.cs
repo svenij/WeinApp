@@ -9,13 +9,12 @@ namespace WeinApp
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
 
             var mainPage = new AboutPage();
-            
+
             Services = ContainerExtensions.CreateContainer();
             Services.RegisterInstance<Page>(mainPage);
 
@@ -26,7 +25,7 @@ namespace WeinApp
             MainPage = mainPage;
         }
 
-        public static Container Services { get; private set; } 
+        public static Container Services { get; private set; }
 
         protected override async void OnStart()
         {
