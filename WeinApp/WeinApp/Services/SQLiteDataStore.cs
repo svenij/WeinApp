@@ -14,43 +14,43 @@ namespace WeinApp.Services
         public SQLiteDataStore()
         {
             var options = new SQLiteConnectionString(DatabasePath);
-            _connection = new SQLiteAsyncConnection(options);
+            Connection = new SQLiteAsyncConnection(options);
         }
             public async Task Initialize()
             {
                 // Check whether our table already exists. If not, we're creating it here.
-                if (_connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
+                if (Connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    await _connection.CreateTableAsync<T>();
+                    await Connection.CreateTableAsync<T>();
                 }
             } 
 
         public async Task<bool> AddWineAsync(T wine)
         {
-            return await _connection.InsertAsync(wine) == 1;
+            return await Connection.InsertAsync(wine) == 1;
         }
 
         public async Task<bool> DeleteWineAsync(string id)
         {
-            return await _connection.DeleteAsync<T>(id) == 1;
+            return await Connection.DeleteAsync<T>(id) == 1;
         }
 
         public Task<T> GetWineAsync(string id)
         {
-            return _connection.GetAsync<T>(id);
+            return Connection.GetAsync<T>(id);
         }
 
         public async Task<IEnumerable<T>> GetWinesAsync(bool forceRefresh = false)
         {
-            return await _connection.Table<T>().ToListAsync();
+            return await Connection.Table<T>().ToListAsync();
         }
 
         public async Task<bool> UpdateWineAsync(T wine)
         {
-            return await _connection.UpdateAsync(wine) == 1;
+            return await Connection.UpdateAsync(wine) == 1;
         }
 
-        private SQLiteAsyncConnection _connection;
+        private SQLiteAsyncConnection Connection;
 
         /// <summary>
         /// Gets the static path to the database. The <see cref="Environment.SpecialFolder"/> is used to resolve the right path.

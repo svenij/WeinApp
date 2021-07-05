@@ -17,17 +17,17 @@ namespace WeinApp.Core
           ResolveUnregisteredConcreteTypes = true,
           AllowOverridingRegistrations = true
         }
-            }.RegisterAlbumServices();
+            }.RegisterWineServices();
         }
 
-        public static Container RegisterAlbumServices([JetBrains.Annotations.NotNull] this Container container)
+        public static Container RegisterWineServices([JetBrains.Annotations.NotNull] this Container container)
         {
             if (container is null) { throw new ArgumentNullException(nameof(container)); }
 
-            container.RegisterSingleton<IDataStore<Wine>, SQLiteDataStore<Wine>>();
+            container.RegisterSingleton<IDataStore<Wine>, WineDataStore>();
             container.RegisterSingleton<IDialogService, DialogService>();
             container.RegisterSingleton<IWineSaver, WineSaver>();
-
+          
             return container;
         }
     }

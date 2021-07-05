@@ -23,7 +23,7 @@ namespace WeinApp
             var dataStore = Services.GetInstance<IDataStore<Wine>>();
             dataStore.Initialize();
 
-            MainPage = new AppShell();
+            MainPage = mainPage;
         }
 
         public static Container Services { get; private set; } 
