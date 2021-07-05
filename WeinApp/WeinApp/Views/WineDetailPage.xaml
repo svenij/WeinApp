@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeinApp.Views.WineDetailPage"
-             Title="{Binding Title}">
-
+             Title="{Binding Weinname}">
+    <ScrollView>
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Name:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Name}" FontSize="Small"/>
+        <Label Text="Weinname:" FontSize="Medium" />
+        <Label Text="{Binding Wine.Weinname}" FontSize="Small"/>
         <Label Text="Typ:" FontSize="Medium" />
         <Label Text="{Binding Wine.Typ}" FontSize="Small"/>
         <Label Text="Jahrgang:" FontSize="Medium" />
@@ -19,5 +19,6 @@
         <Label Text="{Binding Wine.Traubensorte}" FontSize="Small"/>
         <Label Text="Flaschengrösse:" FontSize="Medium" />
         <Label Text="{Binding Wine.Flaschengroesse}" FontSize="Small"/>
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

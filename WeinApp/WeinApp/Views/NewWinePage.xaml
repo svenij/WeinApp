@@ -6,40 +6,44 @@
              Title="Neuer Wein"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Name" FontSize="Medium" />
-            <Entry Text="{Binding Wine.Name}" FontSize="Small" Placeholder="Name" />
-            
-            <Label Text="Typ" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="Name" FontSize="Medium" />
+                <Entry Text="{Binding Wine.Name}" FontSize="Small" Placeholder="Name" />
 
-            <Label Text="Jahrgang" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Jahrgang}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
+                <Label Text="Typ" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
 
-            <Label Text="Land" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Land}" FontSize="Small" Margin="0" Placeholder="Land" />
+                <Label Text="Jahrgang" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Jahrgang}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
 
-            <Label Text="Region" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Region}" FontSize="Small" Margin="0" Placeholder="Region" />
-            
-            <Label Text="Typ" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
+                <Label Text="Land" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Land}" FontSize="Small" Margin="0" Placeholder="Land" />
 
-            <Label Text="TTraubensorteyp" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Traubensorte}" FontSize="Small" Margin="0" Placeholder="Traubensorte" />
+                <Label Text="Region" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Region}" FontSize="Small" Margin="0" Placeholder="Region" />
 
-            <Label Text="Flaschengroesse" FontSize="Medium" />
-            <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />
-        </StackLayout>
+                <Label Text="Typ" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
+
+                <Label Text="Traubensorte" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Traubensorte}" FontSize="Small" Margin="0" Placeholder="Traubensorte" />
+
+                <Label Text="Flaschengroesse" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
-
+   
 </ContentPage>
+
 
 
 

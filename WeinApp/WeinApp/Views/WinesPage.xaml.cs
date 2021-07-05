@@ -18,7 +18,7 @@ namespace WeinApp.Views
         {
             var layout = (BindableObject)sender;
             var wine = (Wine)layout.BindingContext;
-            //await Navigation.PushAsync(new WineDetailPage(new WineDetailViewModel(wine)));
+            await Navigation.PushAsync(new WineDetailPage(new WineDetailViewModel(wine)));
         }
 
         private async void AddWinesClicked(object sender, EventArgs e)
