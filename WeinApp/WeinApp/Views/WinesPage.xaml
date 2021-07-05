@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeinApp.Views.WinesPage"
              xmlns:vm="clr-namespace:WeinApp"
-             Title="{Binding Title}"
+             Title="{Binding Weinname}"
              xmlns:local="clr-namespace:WeinApp.ViewModels"  
              xmlns:model="clr-namespace:WeinApp.Models"  
               x:DataType="vm:ViewModels.WinesViewModel"
@@ -11,20 +11,19 @@
     
 
     <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Hinzufügen" Command="{Binding AddAlbumsClicked}" />
+        <ToolbarItem Text="Hinzufügen" Command="{Binding AddWinesClicked}" />
     </ContentPage.ToolbarItems>-->
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadWinesCommand}">
-        <CollectionView x:Name="WinesCollectionView"
-                ItemsSource="{Binding Wines}">
+        <CollectionView x:Name="WinesCollectionView" ItemsSource="{Binding Wines}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="WeinApp.Models.Wine">
+                <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label Text="{Binding Name}" 
+                        <Label Text="{Binding Weinname}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                        <Label Text="{Binding Typ}"
+                        <Label Text="{Binding Weinname}"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
