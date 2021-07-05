@@ -17,7 +17,7 @@ namespace WeinApp.Services
         {
             if (wine is null) { throw new ArgumentNullException(nameof(wine)); }
 
-            if (string.IsNullOrEmpty(wine.Name))
+            if (string.IsNullOrEmpty(wine.Weinname))
             {
                 await _dialogService.Show("Validation failed", "The title cannot be empty.");
 

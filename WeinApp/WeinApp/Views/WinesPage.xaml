@@ -10,30 +10,31 @@
              x:Name="BrowseItemsPage">
     
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Hinzufügen" Command="{Binding AddWinesClicked}" />
-    </ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Hinzufügen" Command="{Binding AddAlbumsClicked}" />
+    </ContentPage.ToolbarItems>-->
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadWinesCommand}">
         <CollectionView x:Name="WinesCollectionView"
                 ItemsSource="{Binding Wines}">
-            <CollectionView.WineTemplate>
-                <DataTemplate x:DataType="vm.Models.Wine">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="WeinApp.Models.Wine">
                     <StackLayout Padding="10">
-                        <Label Text="{Binding Title}" 
+                        <Label Text="{Binding Name}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                        <Label Text="{Binding Description}"
+                        <Label Text="{Binding Typ}"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
+                        
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnAlbumSelected"></TapGestureRecognizer>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnWineSelected"></TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </DataTemplate>
-            </CollectionView.WineTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
     </RefreshView>
 </ContentPage>

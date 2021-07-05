@@ -14,10 +14,10 @@ namespace WeinApp.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        public string Title
+        public string Weinname
         {
-            get => _title;
-            set => SetProperty(ref _title, value);
+            get => _weinname;
+            set => SetProperty(ref _weinname, value);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -41,6 +41,6 @@ namespace WeinApp.ViewModels
         }
 
         private bool _isBusy;
-        private string _title = string.Empty;
+        private string _weinname = string.Empty;
     }
 }

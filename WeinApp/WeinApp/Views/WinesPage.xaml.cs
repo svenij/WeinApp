@@ -21,7 +21,7 @@ namespace WeinApp.Views
             BindingContext = _viewModel = new WinesViewModel();
         }
 
-        private async void OnAlbumSelected(object sender, EventArgs args)
+        private async void OnWineSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
             var wine = (Wine)layout.BindingContext;

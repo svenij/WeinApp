@@ -10,7 +10,7 @@ namespace WeinApp.ViewModels
     {
         public PasswordViewModel()
         {
-            Title = "Password";
+            Weinname = "Password";
             EncryptCommand = new Command(EncryptWithBiometric);
             DecryptCommand = new Command(DecryptWithBiometric);
         }

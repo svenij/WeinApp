@@ -13,18 +13,18 @@ namespace WeinApp.ViewModels
     {
         public ObservableCollection<TWine> Wines { get; set; }
 
-        public Command LoadItemsCommand { get; set; }
+        public Command LoadWinesCommand { get; set; }
 
         public ListViewModelBase()
         {
-            Title = "Browse";
+            Weinname = "Browse";
             Wines = new ObservableCollection<TWine>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadWinesCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<TPage, TWine>(this, "AddWine", async (obj, item) =>
+            MessagingCenter.Subscribe<TPage, TWine>(this, "AddWine", async (obj, wine) =>
             {
-                Wines.Add(item);
-                await DataStore.AddWineAsync(item);
+                Wines.Add(wine);
+                await DataStore.AddWineAsync(wine);
             });
         }
 
@@ -35,10 +35,10 @@ namespace WeinApp.ViewModels
             try
             {
                 Wines.Clear();
-                var items = await DataStore.GetWinesAsync(true);
-                foreach (var item in items)
+                var wines = await DataStore.GetWinesAsync(true);
+                foreach (var wine in wines)
                 {
-                    Wines.Add(item);
+                    Wines.Add(wine);
                 }
             }
             catch (Exception ex)

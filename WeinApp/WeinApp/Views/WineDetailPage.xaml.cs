@@ -23,7 +23,7 @@ namespace WeinApp.Views
 
             var wine = new Wine
             {
-                Name = "Album 1",
+                Weinname = "Album 1",
                 Typ = "This is an Album description."
             };
 
