@@ -16,12 +16,12 @@
         <ScrollView>
             <StackLayout Spacing="20" Padding="15">
                 <Label Text="Name" FontSize="Medium" />
-                <Entry Text="{Binding Wine.Name}" FontSize="Small" Placeholder="Name" />
+                <Entry Text="{Binding Wine.Weinname}" FontSize="Small" Placeholder="Name" />
 
                 <Label Text="Typ" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
 
-                <Label Text="Jahrgang" FontSize="Medium" />
+                <!--<Label Text="Jahrgang" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Jahrgang}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
 
                 <Label Text="Land" FontSize="Medium" />
@@ -37,7 +37,7 @@
                 <Editor Text="{Binding Wine.Traubensorte}" FontSize="Small" Margin="0" Placeholder="Traubensorte" />
 
                 <Label Text="Flaschengrösse" FontSize="Medium" />
-                <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />
+                <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />-->
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
