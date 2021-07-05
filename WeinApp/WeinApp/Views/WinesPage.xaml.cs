@@ -24,11 +24,11 @@ namespace WeinApp.Views
         private async void OnAlbumSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
-            var album = (Wine)layout.BindingContext;
+            var wine = (Wine)layout.BindingContext;
             //await Navigation.PushAsync(new WineDetailPage(new WineDetailViewModel(wine)));
         }
 
-        private async void AddAlbumClicked(object sender, EventArgs e)
+        private async void AddWinesClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewWinePage()));
         }

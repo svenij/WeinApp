@@ -11,7 +11,7 @@
     
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Hinzufügen" Command="{Binding AddWineCommand}" />
+        <ToolbarItem Text="Hinzufügen" Command="{Binding AddWinesClicked}" />
     </ContentPage.ToolbarItems>
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadWinesCommand}">
