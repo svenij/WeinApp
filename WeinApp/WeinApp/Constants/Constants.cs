@@ -22,5 +22,8 @@ namespace WeinApp.Services
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }
+
+        public static string Username = "user";
+        public static string Password = "password";
     }
 }
