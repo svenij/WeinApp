@@ -13,16 +13,16 @@ namespace WeinApp
         {
             InitializeComponent();
 
-            var mainPage = new AboutPage();
+            MainPage = new AppShell();
 
-            Services = ContainerExtensions.CreateContainer();
-            Services.RegisterInstance<Page>(mainPage);
+            //Services = ContainerExtensions.CreateContainer();
+            //Services.RegisterInstance<Page>(mainPage);
 
             //DependencyService.Register<WineMockDataStore>();
-            var dataStore = Services.GetInstance<IDataStore<Wine>>();
-            dataStore.Initialize();
+            //var dataStore = Services.GetInstance<IDataStore<Wine>>();
+            //dataStore.Initialize();
 
-            MainPage = mainPage;
+            //MainPage = mainPage;
         }
 
         public static Container Services { get; private set; }

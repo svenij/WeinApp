@@ -35,5 +35,6 @@ namespace WeinApp.Views
                 await Shell.Current.GoToAsync("//AboutPage");
             }
         }
+
     }
 }

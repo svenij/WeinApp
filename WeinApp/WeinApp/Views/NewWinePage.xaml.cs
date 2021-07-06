@@ -31,9 +31,9 @@ namespace WeinApp.Views
             //    await Navigation.PopModalAsync();
             //}
                        
-                var todoItem = (Wine)BindingContext;
+                var wine = (Wine)BindingContext;
                 WineDatabase database = await WineDatabase.Instance;
-                await database.SaveItemAsync(todoItem);
+                await database.SaveItemAsync(wine);
 
                 // Navigate backwards
                 await Navigation.PopAsync();
