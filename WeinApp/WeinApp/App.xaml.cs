@@ -18,8 +18,8 @@ namespace WeinApp
             var mainPage = new AboutPage();
             var navigationPage = new NavigationPage(mainPage);
 
-            Services = ContainerExtensions.CreateContainer();
-            Services.RegisterInstance<Page>(navigationPage);
+            //Services = ContainerExtensions.CreateContainer();
+            //Services.RegisterInstance<Page>(navigationPage);
 
             //DependencyService.Register<WineMockDataStore>();
             var dataStore = Services.GetInstance<IDataStore<Wine>>();
