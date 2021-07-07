@@ -17,7 +17,7 @@ namespace WeinApp
             MainPage = new AppShell();
             //var navigationPage = new NavigationPage(mainPage);
 
-            //Services = ContainerExtensions.CreateContainer();
+            Services = ContainerExtensions.CreateContainer();
             //Services.RegisterInstance<Page>(navigationPage);
 
             //DependencyService.Register<WineMockDataStore>();
