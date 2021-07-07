@@ -26,7 +26,7 @@ namespace WeinApp.Core
             if (container is null) { throw new ArgumentNullException(nameof(container)); }
 
             container.RegisterSingleton<IDataStore<Wine>, WineDataStore>();
-          
+            container.RegisterSingleton<IDialogService, DialogService>();
             container.RegisterSingleton<IWineSaver, WineSaver>();
 
             return container;

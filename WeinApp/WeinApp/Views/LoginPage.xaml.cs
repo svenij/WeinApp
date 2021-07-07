@@ -30,24 +30,17 @@ namespace WeinApp.Views
 				Password = passwordEntry.Text
 			};
 
-			var isValid = AreCredentialsCorrect(user);
-			if (isValid)
-			{
-				App.IsUserLoggedIn = true;
-				//Navigation.InsertPageBefore(new MainPage(), this);
-				new MainPage();
-				await Navigation.PopAsync();
-			}
-			else
-			{
-				messageLabel.Text = "Login failed";
-				passwordEntry.Text = string.Empty;
-			}
-		}
+                return;
+            }
+            var authResult = await
+                CrossFingerprint.Current.AuthenticateAsync(new
+                AuthenticationRequestConfiguration("Achtung!", "Bitte Fingerprint verwenden!"));
 
-		bool AreCredentialsCorrect(User user)
-		{
-			return user.Username == Constants.Username && user.Password == Constants.Password;
-		}
-	}
+            if (authResult.Authenticated)
+            {
+                await DisplayAlert("Yes!", "Zugriff zugelassen", "Weiter");
+                await Shell.Current.GoToAsync("//AboutPage");
+            }
+        }
+    }
 }
