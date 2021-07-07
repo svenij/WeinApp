@@ -17,7 +17,7 @@ namespace WeinApp.Views
         {
             InitializeComponent();
 
-            _wineSaver = DependencyService.Get<IWineSaver>();
+            _wineSaver = App.Services.GetInstance<IWineSaver>();
             Wine = new Wine();
 
             BindingContext = this;
@@ -27,7 +27,7 @@ namespace WeinApp.Views
         {
             if (await _wineSaver.TrySaveAsync(Wine))
             {
-                MessagingCenter.Send(this, "AddItem", Wine);
+                MessagingCenter.Send(this, "AddWine", Wine);
                 await Navigation.PopModalAsync();
             }
            }
