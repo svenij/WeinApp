@@ -35,12 +35,7 @@ namespace WeinApp.Views
 
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PopModalAsync();
-
-            var wine = (Wine)BindingContext;
-            WineDatabase database = await WineDatabase.Instance;
-            await database.DeleteItemAsync(wine);
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         
