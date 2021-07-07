@@ -16,7 +16,7 @@ namespace WeinApp
             //MainPage = new AppShell();
 
             var mainPage = new AboutPage();
-            var navigationPage = new NavigationPage(mainPage);
+            //var navigationPage = new NavigationPage(mainPage);
 
             //Services = ContainerExtensions.CreateContainer();
             //Services.RegisterInstance<Page>(navigationPage);
@@ -25,7 +25,7 @@ namespace WeinApp
             var dataStore = Services.GetInstance<IDataStore<Wine>>();
             dataStore.Initialize();
 
-            MainPage = navigationPage;
+            //MainPage = navigationPage;
         }
 
         public static Container Services { get; private set; }
