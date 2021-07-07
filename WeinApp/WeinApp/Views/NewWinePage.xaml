@@ -7,17 +7,16 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
-    </ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
+        --><!--<ToolbarItem Text="Cancel" Command="{Binding CancelCommand}" />
+        <ToolbarItem Text="Save"Command="{Binding SaveCommand}" />--><!--
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="20" Padding="15">
                 <Label Text="Name" FontSize="Medium" />
                 <Entry Text="{Binding Wine.Weinname}" FontSize="Small" Placeholder="Name" />
-
                 <Label Text="Typ" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
 
@@ -38,6 +37,10 @@
 
                 <Label Text="Flaschengrösse" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Flaschengroesse}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />-->
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

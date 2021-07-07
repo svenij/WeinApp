@@ -16,7 +16,7 @@ namespace WeinApp.ViewModels
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
-                (, _) => SaveCommand.ChangeCanExecute();
+                (_, __) => SaveCommand.ChangeCanExecute();
         }
 
         private bool ValidateSave()
@@ -55,10 +55,10 @@ namespace WeinApp.ViewModels
                 Jahrgang = Jahrgang
             };
 
-            await DataStore.AddItemAsync(newWine);
+            await DataStore.AddWineAsync(newWine);
 
             // This will pop the current page off the navigation stack
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("//WinesPage");
         }
     }
 }

@@ -16,23 +16,7 @@ namespace WeinApp.Views
         public NewWinePage()
         {
             InitializeComponent();
-
-            //_wineSaver = App.Services.GetInstance<IWineSaver>();
-           Wine = new Wine();
-
-            BindingContext = this;
+            BindingContext = new NewWineViewModel();
         }
-
-        private async void Save_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void Cancel_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
-
-        //private readonly IWineSaver _wineSaver;
     }
 }
