@@ -8,6 +8,6 @@ namespace WeinApp.Services
 {
     public interface IWineSaver
     {
-        Task<bool> TrySaveAsync(Wine wine);
+        //Task<bool> TrySaveAsync(Wine wine);
     }
 }

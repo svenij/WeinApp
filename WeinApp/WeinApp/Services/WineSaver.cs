@@ -7,28 +7,30 @@ using WeinApp.Models;
 namespace WeinApp.Services
 {
     public class WineSaver : IWineSaver
-    {
-        public WineSaver(IDialogService dialogService)
-        {
-            _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
-        }
+    { } 
+}
 
-        public async Task<bool> TrySaveAsync(Wine wine)
-        {
-            if (wine is null) { throw new ArgumentNullException(nameof(wine)); }
+        //public WineSaver(IDialogService dialogService)
+        //{
+        //    _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
+        //}
 
-            if (string.IsNullOrEmpty(wine.Weinname))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Der Weinname darf nicht leer sein!");
+        //public async Task<bool> TrySaveAsync(Wine wine)
+        //{
+        //    if (wine is null) { throw new ArgumentNullException(nameof(wine)); }
 
-                return false;
-            }
-            if (string.IsNullOrEmpty(wine.Jahrgang))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Der Jahrgang darf nicht leer sein!");
+        //    if (string.IsNullOrEmpty(wine.Weinname))
+        //    {
+        //        await _dialogService.Show("Validierung fehlgeschlagen", "Der Weinname darf nicht leer sein!");
 
-                return false;
-            }
+        //        return false;
+        //    }
+        //    if (string.IsNullOrEmpty(wine.Jahrgang))
+        //    {
+        //        await _dialogService.Show("Validierung fehlgeschlagen", "Der Jahrgang darf nicht leer sein!");
+
+        //        return false;
+        //    }
 
             //if (string.IsNullOrEmpty(wine.Typ))
             //{
@@ -61,9 +63,9 @@ namespace WeinApp.Services
             //    return false;
             //}
 
-            return true;
-        }
+            //return true;
+    //    }
 
-        private readonly IDialogService _dialogService;
-    }
-}
+    //    //private readonly IDialogService _dialogService;
+    //}
+
