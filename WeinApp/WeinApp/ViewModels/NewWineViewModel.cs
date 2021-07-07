@@ -51,8 +51,8 @@ namespace WeinApp.ViewModels
             Wine newWine = new Wine()
             {
                 Id = Guid.NewGuid().ToString(),
-                Weinname = Weinname,
-                Jahrgang = Jahrgang
+                Weinname = weinname,
+                Jahrgang = jahrgang
             };
 
             await DataStore.AddWineAsync(newWine);
