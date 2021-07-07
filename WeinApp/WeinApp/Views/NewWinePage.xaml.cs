@@ -37,6 +37,6 @@ namespace WeinApp.Views
             await Navigation.PopModalAsync();
         }
 
-        private readonly IWineSaver _wineSaver;
+        //private readonly IWineSaver _wineSaver;
     }
 }
