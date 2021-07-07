@@ -10,9 +10,9 @@
              x:Name="BrowseItemsPage">
     
 
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Hinzufügen" Clicked="AddWinesClicked" />
-    </ContentPage.ToolbarItems>-->
+    </ContentPage.ToolbarItems>
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadWinesCommand}">
         <CollectionView x:Name="WinesCollectionView" ItemsSource="{Binding Wines}">
@@ -23,7 +23,7 @@
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                        <Label Text="{Binding Typ}"
+                        <Label Text="{Binding Jahrgang}"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />

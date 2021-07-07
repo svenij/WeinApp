@@ -18,13 +18,13 @@
                 <Label Text="Name" FontSize="Medium" />
                 <Entry Text="{Binding Wine.Weinname}" FontSize="Small" Placeholder="Name" />
 
-                <Label Text="Typ" FontSize="Medium" />
-                <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />
+                <!--<Label Text="Typ" FontSize="Medium" />
+                <Editor Text="{Binding Wine.Typ}" FontSize="Small" Margin="0" Placeholder="Typ" />-->
 
-                <!--<Label Text="Jahrgang" FontSize="Medium" />
+                <Label Text="Jahrgang" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Jahrgang}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
 
-                <Label Text="Land" FontSize="Medium" />
+                <!--<Label Text="Land" FontSize="Medium" />
                 <Editor Text="{Binding Wine.Land}" FontSize="Small" Margin="0" Placeholder="Land" />
 
                 <Label Text="Region" FontSize="Medium" />

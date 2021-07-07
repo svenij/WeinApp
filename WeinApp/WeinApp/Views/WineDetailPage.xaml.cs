@@ -24,7 +24,7 @@ namespace WeinApp.Views
             var wine = new Wine
             {
                 Weinname = "Album 1",
-                Typ = "This is an Album description."
+                Jahrgang = "This is an Album description."
             };
 
             _viewModel = new WineDetailViewModel(wine);

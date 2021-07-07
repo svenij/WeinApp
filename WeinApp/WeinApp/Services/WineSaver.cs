@@ -20,46 +20,44 @@ namespace WeinApp.Services
             if (string.IsNullOrEmpty(wine.Weinname))
             {
                 await _dialogService.Show("Validierung fehlgeschlagen", "Der Weinname darf nicht leer sein!");
-
                 return false;
             }
             if (string.IsNullOrEmpty(wine.Jahrgang))
             {
                 await _dialogService.Show("Validierung fehlgeschlagen", "Der Jahrgang darf nicht leer sein!");
-
                 return false;
             }
 
-            if (string.IsNullOrEmpty(wine.Typ))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Der Weintyp darf nicht leer sein!");
+            //if (string.IsNullOrEmpty(wine.Typ))
+            //{
+            //    await _dialogService.Show("Validierung fehlgeschlagen", "Der Weintyp darf nicht leer sein!");
 
-                return false;
-            }
-            if (string.IsNullOrEmpty(wine.Land))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Das Land darf nicht leer sein!");
+            //    return false;
+            //}
+            //if (string.IsNullOrEmpty(wine.Land))
+            //{
+            //    await _dialogService.Show("Validierung fehlgeschlagen", "Das Land darf nicht leer sein!");
 
-                return false;
-            }
-            if (string.IsNullOrEmpty(wine.Region))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Die Region darf nicht leer sein!");
+            //    return false;
+            //}
+            //if (string.IsNullOrEmpty(wine.Region))
+            //{
+            //    await _dialogService.Show("Validierung fehlgeschlagen", "Die Region darf nicht leer sein!");
 
-                return false;
-            }
-            if (string.IsNullOrEmpty(wine.Traubensorte))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Die Traubensorte darf nicht leer sein!");
+            //    return false;
+            //}
+            //if (string.IsNullOrEmpty(wine.Traubensorte))
+            //{
+            //    await _dialogService.Show("Validierung fehlgeschlagen", "Die Traubensorte darf nicht leer sein!");
 
-                return false;
-            }
-            if (string.IsNullOrEmpty(wine.Flaschengroesse))
-            {
-                await _dialogService.Show("Validierung fehlgeschlagen", "Die Flaschengrösse darf nicht leer sein!");
+            //    return false;
+            //}
+            //if (string.IsNullOrEmpty(wine.Flaschengroesse))
+            //{
+            //    await _dialogService.Show("Validierung fehlgeschlagen", "Die Flaschengrösse darf nicht leer sein!");
 
-                return false;
-            }
+            //    return false;
+            //}
 
             return true;
         }
