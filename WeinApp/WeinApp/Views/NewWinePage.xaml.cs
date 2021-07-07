@@ -25,20 +25,12 @@ namespace WeinApp.Views
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            //if (await _wineSaver.TrySaveAsync(Wine))
-            //{
-            //    MessagingCenter.Send(this, "AddItem", Wine);
-            //    await Navigation.PopModalAsync();
-            //}
-                       
-                var wine = (Wine)BindingContext;
-                WineDatabase database = await WineDatabase.Instance;
-                await database.SaveItemAsync(wine);
-
-                // Navigate backwards
-                await Navigation.PopAsync();
-            
-        }
+            if (await _wineSaver.TrySaveAsync(Wine))
+            {
+                MessagingCenter.Send(this, "AddItem", Wine);
+                await Navigation.PopModalAsync();
+            }
+           }
 
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
