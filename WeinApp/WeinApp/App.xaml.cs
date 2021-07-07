@@ -9,11 +9,22 @@ namespace WeinApp
 {
     public partial class App : Application
     {
+        public static bool IsUserLoggedIn { get; set; }
+
         public App()
         {
-            InitializeComponent();
+            if (!IsUserLoggedIn)
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
+            else
+            {
+                MainPage = new AppShell();
+            }
 
-            MainPage = new AppShell();
+            //InitializeComponent();
+
+            //MainPage = new AppShell();
 
             //Services = ContainerExtensions.CreateContainer();
             //Services.RegisterInstance<Page>(mainPage);
@@ -27,9 +38,9 @@ namespace WeinApp
 
         public static Container Services { get; private set; }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            //await Shell.Current.GoToAsync("//LoginPage");
         }
 
         protected override void OnSleep()

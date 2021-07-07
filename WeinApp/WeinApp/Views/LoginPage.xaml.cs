@@ -1,5 +1,8 @@
 ﻿using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
+using System;
+using WeinApp.Models;
+using WeinApp.Services;
 using WeinApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,33 +11,43 @@ namespace WeinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
-    {
-        public LoginPage()
-        {
-            InitializeComponent();
-            this.BindingContext = new LoginViewModel();
-        }
-        async void Btn_Biometrie(System.Object sender, System.EventArgs e)
-        {
-            var availability = await
-                CrossFingerprint.Current.IsAvailableAsync();
+	{
+		public LoginPage()
+		{
+			InitializeComponent();
+		}
 
-            if (!availability)
-            {
-                await DisplayAlert("Warnung!", "Keine Biometrie verfügbar!", "OK!");
+		async void OnSignUpButtonClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new SignUpPage());
+		}
 
-                return;
-            }
-            var authResult = await
-                CrossFingerprint.Current.AuthenticateAsync(new
-                AuthenticationRequestConfiguration("Achtung!", "Bitte Fingerprint verwenden!"));
+		async void OnLoginButtonClicked(object sender, EventArgs e)
+		{
+			var user = new User
+			{
+				Username = usernameEntry.Text,
+				Password = passwordEntry.Text
+			};
 
-            if (authResult.Authenticated)
-            {
-                await DisplayAlert("Yes!", "Zugriff zugelassen", "Weiter");
-                await Shell.Current.GoToAsync("//AboutPage");
-            }
-        }
+			var isValid = AreCredentialsCorrect(user);
+			if (isValid)
+			{
+				App.IsUserLoggedIn = true;
+				//Navigation.InsertPageBefore(new MainPage(), this);
+				new MainPage();
+				await Navigation.PopAsync();
+			}
+			else
+			{
+				messageLabel.Text = "Login failed";
+				passwordEntry.Text = string.Empty;
+			}
+		}
 
-    }
+		bool AreCredentialsCorrect(User user)
+		{
+			return user.Username == Constants.Username && user.Password == Constants.Password;
+		}
+	}
 }
