@@ -18,18 +18,19 @@ namespace WeinApp.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
+           
             await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
         }
         public Action DisplayInvalidLoginPrompt;
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private string email;
-        public string Email
+        private string username;
+        public string Username
         {
-            get => email;
+            get => username;
             set
             {
-                email = value;
+                username = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Email"));
             }
         }
@@ -48,7 +49,7 @@ namespace WeinApp.ViewModels
 
         public void OnSubmit()
         {
-            if (email != "user" || password != "user")
+            if (username != "user" || password != "user")
             {
                 DisplayInvalidLoginPrompt();
             }
