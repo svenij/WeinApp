@@ -83,7 +83,7 @@ namespace WeinApp.ViewModels
                 Flaschengroesse = flaschengroesse,
                 AnzahlFlaschen = anzahlFlaschen,
             };
-            
+
 
             await DataStore.AddWineAsync(newWine);
 
