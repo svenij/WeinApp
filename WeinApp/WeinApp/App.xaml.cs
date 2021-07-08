@@ -15,21 +15,8 @@ namespace WeinApp
             DependencyService.Register<SQLiteDataStore<Wine>>();
            
             MainPage = new AppShell();
-
-            
-
-            
-            MainPage = new AppShell();
-            //var navigationPage = new NavigationPage(mainPage);
-
             Services = ContainerExtensions.CreateContainer();
-            //Services.RegisterInstance<Page>(navigationPage);
-
-            //DependencyService.Register<WineMockDataStore>();
-            //var dataStore = Services.GetInstance<IDataStore<Wine>>();
-            //dataStore.Initialize();
-
-            //MainPage = navigationPage;
+         
         }
 
         public static Container Services { get; private set; }
