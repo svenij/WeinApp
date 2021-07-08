@@ -11,6 +11,12 @@ namespace WeinApp.ViewModels
         public WineDetailViewModel(Wine wine = null)
         {
             Weinname = wine?.Weinname;
+            Jahrgang = wine?.Jahrgang;
+            Typ = wine?.Typ;
+            Herkunft = wine?.Herkunft;
+            Flaschengroesse = wine?.Flaschengroesse;
+            AnzahlFlaschen = wine?.AnzahlFlaschen;
+
             Wine = wine;
         }
 
