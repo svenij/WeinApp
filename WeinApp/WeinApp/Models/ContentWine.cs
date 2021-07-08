@@ -9,9 +9,9 @@ namespace WeinApp.Models
         public string Weinname { get; set; }
 
         public string Jahrgang { get; set; }
-        public override string ToString()
-        {
-            return $"{Weinname}: {Jahrgang}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"{Weinname}: {Jahrgang}";
+        //}
     }
 }

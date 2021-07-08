@@ -12,8 +12,13 @@ namespace WeinApp
         public App()
         {
             InitializeComponent();
+            DependencyService.Register<SQLiteDataStore<Wine>>();
+           
+            MainPage = new AppShell();
 
-            var mainPage = new AboutPage();
+            
+
+            
             MainPage = new AppShell();
             //var navigationPage = new NavigationPage(mainPage);
 
