@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using WeinApp.Models;
-using Xamarin.Forms;
+﻿using WeinApp.Models;
 
 namespace WeinApp.ViewModels
 {

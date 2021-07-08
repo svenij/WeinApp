@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WeinApp.Models
+﻿namespace WeinApp.Models
 {
     public class ContentWine : UniqueItem
     {

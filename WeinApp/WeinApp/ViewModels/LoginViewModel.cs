@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
 using WeinApp.Views;
 using Xamarin.Forms;
@@ -24,7 +22,7 @@ namespace WeinApp.ViewModels
         }
         public Action DisplayInvalidLoginPrompt;
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
-        
+
         private string email;
         public string Email
         {

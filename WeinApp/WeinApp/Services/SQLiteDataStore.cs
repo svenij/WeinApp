@@ -3,12 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WeinApp.Services
 {
-    public class SQLiteDataStore <T>: IDataStore<T>
+    public class SQLiteDataStore<T> : IDataStore<T>
     where T : new()
     {
         public SQLiteDataStore()
@@ -16,14 +15,13 @@ namespace WeinApp.Services
             var options = new SQLiteConnectionString(DatabasePath);
             Connection = new SQLiteAsyncConnection(options);
         }
-            public virtual async Task Initialize()
+        public virtual async Task Initialize()
+        {
+            if (Connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
             {
-                // Check whether our table already exists. If not, we're creating it here.
-                if (Connection.TableMappings.All(x => !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    await Connection.CreateTableAsync<T>();
-                }
-            } 
+                await Connection.CreateTableAsync<T>();
+            }
+        }
 
         public async Task<bool> AddWineAsync(T wine)
         {
@@ -52,9 +50,6 @@ namespace WeinApp.Services
 
         protected SQLiteAsyncConnection Connection { get; private set; }
 
-        /// <summary>
-        /// Gets the static path to the database. The <see cref="Environment.SpecialFolder"/> is used to resolve the right path.
-        /// </summary>
         private static string DatabasePath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Wines.db3");
     }
 }

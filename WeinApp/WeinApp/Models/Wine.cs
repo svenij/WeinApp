@@ -1,10 +1,7 @@
-﻿using SQLite;
-using System;
-
-namespace WeinApp.Models
+﻿namespace WeinApp.Models
 {
-    public class Wine :ContentWine
+    public class Wine : ContentWine
     {
-      
+
     }
 }

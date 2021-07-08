@@ -5,7 +5,6 @@ namespace WeinApp.Services
 {
     public interface IDataStore<T>
     {
-        //Task Initialize();
         Task<bool> AddWineAsync(T wine);
         Task<bool> UpdateWineAsync(T wine);
         Task<bool> DeleteWineAsync(string id);

@@ -5,7 +5,7 @@ using WeinApp.Models;
 using WeinApp.Services;
 
 namespace WeinApp.Core
-{ 
+{
     public static class ContainerExtensions
     {
         public static Container CreateContainer()

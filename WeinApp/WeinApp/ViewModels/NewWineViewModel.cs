@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using WeinApp.Models;
 using Xamarin.Forms;
 
@@ -70,7 +68,6 @@ namespace WeinApp.ViewModels
 
         private async void OnCancel()
         {
-            // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("//WinesPage");
         }
 
@@ -89,7 +86,6 @@ namespace WeinApp.ViewModels
 
             await DataStore.AddWineAsync(newWine);
 
-            // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("//WinesPage");
         }
     }

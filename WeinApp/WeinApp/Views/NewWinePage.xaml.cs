@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using WeinApp.Models;
-using WeinApp.Services;
+﻿using WeinApp.Models;
 using WeinApp.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WeinApp.Views
 {

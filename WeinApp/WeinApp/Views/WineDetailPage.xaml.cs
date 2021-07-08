@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
+﻿using WeinApp.Models;
 using WeinApp.ViewModels;
 using Xamarin.Forms;
-using System;
-using WeinApp.Models;
 
 namespace WeinApp.Views
 {
