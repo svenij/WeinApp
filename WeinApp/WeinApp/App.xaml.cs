@@ -24,6 +24,7 @@ namespace WeinApp
         protected override async void OnStart()
         {
             await Shell.Current.GoToAsync("//LoginPage");
+            await DependencyService.Get<SQLiteDataStore<Wine>>().Initialize();
         }
 
         protected override void OnSleep()

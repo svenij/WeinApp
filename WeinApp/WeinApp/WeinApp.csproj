@@ -27,8 +27,4 @@
       <DependentUpon>WinesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
 </Project>

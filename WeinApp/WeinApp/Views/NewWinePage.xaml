@@ -11,9 +11,9 @@
         <ScrollView>
             <StackLayout Spacing="20" Padding="15">
                 <Label Text="Name" FontSize="Medium" />
-                <Entry Text="{Binding Wine.Weinname, Mode=TwoWay}" FontSize="Small" Placeholder="Weinname" />
+                <Entry Text="{Binding Weinname, Mode=TwoWay}" FontSize="Small" Placeholder="Weinname" />
                 <Label Text="Jahrgang" FontSize="Medium" />
-                <Editor Text="{Binding Wine.Jahrgang, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
+                <Editor Text="{Binding Jahrgang, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
