@@ -18,7 +18,6 @@ namespace WeinApp.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-           
             await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
         }
         public Action DisplayInvalidLoginPrompt;
