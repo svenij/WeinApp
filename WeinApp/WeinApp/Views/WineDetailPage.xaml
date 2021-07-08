@@ -6,19 +6,17 @@
     <ScrollView>
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Weinname:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Weinname}" FontSize="Small"/>
+        <Label Text="{Binding Weinname}" FontSize="Small"/>
         <Label Text="Typ:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Typ}" FontSize="Small"/>
+        <Label Text="{Binding Jahrgang}" FontSize="Small"/>
         <Label Text="Jahrgang:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Jahrgang}" FontSize="Small"/>
-        <Label Text="Land:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Land}" FontSize="Small"/>
-        <Label Text="Region:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Region}" FontSize="Small"/>
-        <Label Text="Traubensorte:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Traubensorte}" FontSize="Small"/>
+        <Label Text="{Binding Typ}" FontSize="Small"/>
+        <Label Text="Herkunft:" FontSize="Medium" />
+        <Label Text="{Binding Herkunft}" FontSize="Small"/>
         <Label Text="Flaschengrösse:" FontSize="Medium" />
-        <Label Text="{Binding Wine.Flaschengroesse}" FontSize="Small"/>
+        <Label Text="{Binding Flaschengroesse}" FontSize="Small"/>
+        <Label Text="Anzahl Flaschen:" FontSize="Medium" />
+            <Label Text="{Binding AnzahlFlaschen}" FontSize="Small"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

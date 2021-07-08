@@ -14,6 +14,16 @@
                 <Entry Text="{Binding Weinname, Mode=TwoWay}" FontSize="Small" Placeholder="Weinname" />
                 <Label Text="Jahrgang" FontSize="Medium" />
                 <Editor Text="{Binding Jahrgang, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Jahrgang" />
+                <Label Text="Typ" FontSize="Medium" />
+                <Editor Text="{Binding Typ, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Typ" />
+                <Label Text="Herkunft" FontSize="Medium" />
+                <Editor Text="{Binding Herkunft, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Herkunft" />
+                <Label Text="Flaschengrösse" FontSize="Medium" />
+                <Editor Text="{Binding Flaschengroesse, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="Flaschengroesse" />
+                <Label Text="Anzahl Flaschen" FontSize="Medium" />
+                <Editor Text="{Binding AnzahlFlaschen, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="AnzahlFlaschen" />
+
+
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
