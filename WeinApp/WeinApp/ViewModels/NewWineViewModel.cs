@@ -20,7 +20,6 @@ namespace WeinApp.ViewModels
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
         }
-
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(weinname)
@@ -83,7 +82,6 @@ namespace WeinApp.ViewModels
                 Flaschengroesse = flaschengroesse,
                 AnzahlFlaschen = anzahlFlaschen,
             };
-
 
             await DataStore.AddWineAsync(newWine);
 

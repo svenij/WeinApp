@@ -18,7 +18,6 @@ namespace WeinApp.ViewModels
             get => _weinname;
             set => SetProperty(ref _weinname, value);
         }
-
         public string Jahrgang
         {
             get => _jahrgang;
@@ -44,7 +43,6 @@ namespace WeinApp.ViewModels
             get => _anzahlFlaschen;
             set => SetProperty(ref _anzahlFlaschen, value);
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
