@@ -23,7 +23,6 @@
                 <Label Text="Anzahl Flaschen" FontSize="Medium" />
                 <Editor Text="{Binding AnzahlFlaschen, Mode=TwoWay}" FontSize="Small" Margin="0" Placeholder="AnzahlFlaschen" />
 
-
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

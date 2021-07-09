@@ -8,11 +8,6 @@
              xmlns:model="clr-namespace:WeinApp.Models"  
               x:DataType="vm:ViewModels.WinesViewModel"
              x:Name="BrowseItemsPage">
-    
-
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Hinzufügen" Clicked="AddWinesClicked" />
-    </ContentPage.ToolbarItems>-->
 
     <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadWinesCommand}">
         <CollectionView x:Name="WinesCollectionView" ItemsSource="{Binding Wines}">

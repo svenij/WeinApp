@@ -15,7 +15,6 @@
             <Entry Placeholder="Geben Sie Ihres Passwort ein" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" TextColor="#722f37"/>
 
             <Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" Image="login32.png" BackgroundColor ="#722f37" Text="Login" Command="{Binding LoginCommand}"/>
-            <!--<Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" BackgroundColor ="#96d1ff" Text="Login Fingerprint" Command="{Binding Btn_Biometrie}" IsVisible="{Binding IsBiometricAuthAllowed}"/>-->
             <Button VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="20" BackgroundColor ="#722f37" Text="Login Fingerprint" Clicked="Btn_Biometrie"/>
         </StackLayout>
     </ContentPage.Content>
